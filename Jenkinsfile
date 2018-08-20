@@ -8,7 +8,7 @@ node
     }
     stage('Static Code Analysis')
     {
-        def sonarHome = tool 'Sonar-Scanner';
+        def scannerHome = tool 'Sonar-Scanner';
         withSonarQubeEnv('SonarQubeServer') {
             sh """${scannerHome}/bin/sonar-runner -D sonar.login=admin -D sonar.password=admin"""
         }
